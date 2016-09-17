@@ -6,4 +6,5 @@ from tomltoml import api
 
 
 def test_loads():
-    assert api.loads('') == ''
+    with open('./tests/examples/simple.toml', 'r') as f:
+        assert api.loads(f.read()) == ''
